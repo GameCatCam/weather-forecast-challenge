@@ -104,7 +104,7 @@ const callFiveDayApi = function() {
     const stateCode = document.getElementById('state-code').value
     //console.log(stateCode)
 
-    const geoCall = `http://api.openweathermap.org/geo/1.0/direct?q=${searchField},${stateCode},USA&limit=1&appid=${apiKey}`
+    const geoCall = `https://api.openweathermap.org/geo/1.0/direct?q=${searchField},${stateCode},USA&limit=1&appid=${apiKey}`
 
     fetch(geoCall)
         .then(function(res) {
@@ -196,7 +196,7 @@ const todayApi = function() {
     const searchField = document.getElementById('city-input').value
     const stateCode = document.getElementById('state-code').value
 
-    const geoCall = `http://api.openweathermap.org/geo/1.0/direct?q=${searchField},${stateCode},USA&limit=1&appid=${apiKey}`
+    const geoCall = `https://api.openweathermap.org/geo/1.0/direct?q=${searchField},${stateCode},USA&limit=1&appid=${apiKey}`
 
     document.getElementById('city-input').value = ''
 
