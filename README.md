@@ -10,9 +10,8 @@ This project utilizes a weather forecasting API to pull information from and dyn
 2. [Usage](#usage)
 3. [License](#license)
 4. [Contributing](#contributing)
-5. [Tests](#tests)
-6. [Credits](#credits)
-7. [Questions](#questions)
+5. [Credits](#credits)
+6. [Questions](#questions)
 
 ## Installation
 
@@ -20,7 +19,7 @@ This can be downloaded if you wish by just cloning the repository. Once you do t
 
 ## Usage
 
-This project is mostly for practice. You may use it to look at an MVC model in action. That would be preferable.
+This project is mostly for practice. You may use it to look at a API calls in practice. That would be preferable.
 
 ## License
 
@@ -29,10 +28,6 @@ This project is protected under the MIT license
 ## Contributing
 
 There are no contributions needed!
-
-## Tests
-
-There are no tests for this project.
 
 ## Credits
 
