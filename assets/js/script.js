@@ -71,11 +71,35 @@
     div.appendChild(selectTag);
 // End of State Codes
 
+// Search History
+const searchHistory = document.getElementById("history-select");
+let searchArray = [];
+console.log(searchArray)
+
+const searchFill = function() {
+    if (JSON.parse(localStorage.getItem("searchArray")) !== null) {
+        searchArray = JSON.parse(localStorage.getItem("searchArray"));
+    }
+
+    searchHistory.innerHTML = "";
+
+    searchArray.forEach((search) => {
+        const option = document.createElement('option');
+        option.textContent = search;
+        searchHistory.appendChild(option);
+    });
+}
+// End of Search History
+
 const apiKey = "4856cb3ea44c997053a0da94c20cc9f2"
 const searchButton = document.querySelector('.city-search')
 
 const callFiveDayApi = function() {
     const searchField = document.getElementById('city-input').value
+    if (!searchArray.includes(searchField)) {
+        searchArray.push(searchField);
+    }
+    localStorage.setItem('searchArray', JSON.stringify(searchArray))
     //console.log(searchField)
     const stateCode = document.getElementById('state-code').value
     //console.log(stateCode)
@@ -114,7 +138,9 @@ const callFiveDayApi = function() {
                     }
                     // Date
                     let dateEle = document.createElement('p');
-                    dateEle.textContent = data.list[i].dt_txt;
+                    const timestamp = data.list[i].dt
+                    const date = new Date(timestamp*1000)
+                    dateEle.textContent = `${date.getMonth()}/${date.getDate()}`;
                     fiveDayBoxes[i].appendChild(dateEle);
                     // Temp
                     let tempEle = document.createElement('p');
@@ -140,7 +166,9 @@ const callFiveDayApi = function() {
                     }
                     //Date
                     let dateEle = document.createElement('p');
-                    dateEle.textContent = data.list[i*8].dt_txt;
+                    const timestamp = data.list[i*8].dt
+                    const date = new Date(timestamp*1000)
+                    dateEle.textContent = `${date.getMonth()}/${date.getDate()}`;
                     fiveDayBoxes[i].appendChild(dateEle);
                     // Temp
                     let tempEle = document.createElement('p');
@@ -197,7 +225,9 @@ const todayApi = function() {
             cityName.textContent = data.name
 
             const currentDate = document.getElementById('current-date')
-            currentDate.textContent = data.dt
+            const timestamp = data.dt
+            const date = new Date(timestamp*1000)
+            currentDate.textContent = `${date.getMonth()}/${date.getDate()}`
 
             const humidity = document.getElementById('humidity')
             humidity.textContent = Math.round(data.main.humidity)
@@ -213,9 +243,15 @@ const todayApi = function() {
         })
 }
 
+searchFill()
+
 const finalApiCall = function() {
     callFiveDayApi()
     todayApi()
+    searchFill()
 }
 
 searchButton.addEventListener('click', finalApiCall)
+searchHistory.addEventListener('change', function () {
+    document.getElementById('city-input').value = searchHistory.value
+});
