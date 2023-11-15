@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <header class="container has-text-centered">
+      <h1 class="title">Weather Dashboard</h1>
+    </header>
+    
+    <section class="section columns">
+      <div class="box column is-one-third mr-6">
+        <div class="field">
+          <label class="label">City</label>
+          <div class="control">
+            <input class="input" id="city-input" type="name" placeholder="City Name...">
+          </div>
+          <div class="state-code" id="state-code-container">
+          </div>
+        </div>
+        <button class="button is-primary city-search">Search...</button>
+        <select class="history-select" id="history-select"></select>
+      </div>
+
+      <div class="box column">
+        <div class="columns one-day">
+          <div class="column is-one-sixth">
+            <p>City Name:</p> <p id="city-name"></p>
+            <p>Current Date:</p> <p id="current-date"></p>
+            <p>Humidity:</p> <p id="humidity"></p>
+            <p>Wind Speed:</p> <p id="wind-speed"></p>
+          </div>
+          <div class="column is-two-sixths">
+            <p>Temperature:</p> <p id="temp"></p>
+          </div>
+          <div class="column has-text-centered">
+            <img class="is-medium" id="icon">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="box has-text-centered">
+        <h2>Five Day Forecast</h2>
+      </div>
+      <section class="is-flex-direction-row">
+        <div class="box is-3 5-day">
+          <p>Day 1</p>
+        </div>
+        <div class="box is-3 5-day">
+          <p>Day 2</p>
+        </div>
+        <div class="box is-3 5-day">
+          <p>Day 3</p>
+        </div>
+        <div class="box is-3 5-day">
+          <p>Day 4</p>
+        </div>
+        <div class="box is-3 5-day">
+          <p>Day 5</p>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Weather Forecast</strong> by Cameron.
+        </p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
