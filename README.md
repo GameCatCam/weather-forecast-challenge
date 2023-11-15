@@ -1,4 +1,4 @@
-# Weather Forecast API challenge [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+# Weather Forecast API challenge [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://gamecatcam.github.io/weather-forecast-challenge/)
 
 ## Description
 
