@@ -144,15 +144,15 @@ const callFiveDayApi = function() {
                     fiveDayBoxes[i].appendChild(dateEle);
                     // Temp
                     let tempEle = document.createElement('p');
-                    tempEle.textContent = Math.round(data.list[i].main.temp);
+                    tempEle.textContent = `${Math.round(data.list[i].main.temp)} Degrees`;
                     fiveDayBoxes[i].appendChild(tempEle);
                     // Wind Speed
                     let windEle = document.createElement('p');
-                    windEle.textContent = Math.round(data.list[i].wind.speed);
+                    windEle.textContent = `${Math.round(data.list[i].wind.speed)} mph`;
                     fiveDayBoxes[i].appendChild(windEle);
                     // Humidity
                     let humidEle = document.createElement('p');
-                    humidEle.textContent = Math.round(data.list[i].main.humidity);
+                    humidEle.textContent = `${Math.round(data.list[i].main.humidity)}%`;
                     fiveDayBoxes[i].appendChild(humidEle);
                     // Icon
                     let iconEle = document.createElement('img');
@@ -172,15 +172,15 @@ const callFiveDayApi = function() {
                     fiveDayBoxes[i].appendChild(dateEle);
                     // Temp
                     let tempEle = document.createElement('p');
-                    tempEle.textContent = Math.round(data.list[i*8].main.temp);
+                    tempEle.textContent = `${Math.round(data.list[i*8].main.temp)} Degrees`;
                     fiveDayBoxes[i].appendChild(tempEle);
                     // Wind Speed
                     let windEle = document.createElement('p');
-                    windEle.textContent = Math.round(data.list[i*8].wind.speed);
+                    windEle.textContent = `${Math.round(data.list[i*8].wind.speed)} mph`;
                     fiveDayBoxes[i].appendChild(windEle);
                     // Humidity
                     let humidEle = document.createElement('p');
-                    humidEle.textContent = Math.round(data.list[i*8].main.humidity);
+                    humidEle.textContent = `${Math.round(data.list[i*8].main.humidity)}%`;
                     fiveDayBoxes[i].appendChild(humidEle);
                     // Icon
                     let iconEle = document.createElement('img');
@@ -233,10 +233,10 @@ const todayApi = function() {
             humidity.textContent = Math.round(data.main.humidity)
 
             const windSpeed = document.getElementById('wind-speed')
-            windSpeed.textContent = Math.round(data.wind.speed)
+            windSpeed.textContent = `${Math.round(data.wind.speed)} mph`
 
             const temp = document.getElementById('temp')
-            temp.textContent = Math.round(data.main.temp)
+            temp.textContent = `${Math.round(data.main.temp)} Degrees`
 
             const icon = document.getElementById('icon')
             icon.setAttribute('src', "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png") 
